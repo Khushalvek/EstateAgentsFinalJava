@@ -10,6 +10,13 @@ public class Property {
     private String address;
     private String status;
     private int price;
+    private int bathrooms;
+    private int bedrooms;
+    private String type;
+    private String garden;
+
+    private String postcode;
+
 
 
 
@@ -19,16 +26,20 @@ public class Property {
     @ManyToOne
     private Seller seller;
 
-    public Property(long property_id, String address, String status, int price, Seller seller) {
+    public Property() {
+    }
+
+    public Property(long property_id, String address, String status, int price, int bathrooms, int bedrooms, String type, String garden, String postcode, Seller seller) {
         this.property_id = property_id;
         this.address = address;
         this.status = status;
         this.price = price;
+        this.bathrooms = bathrooms;
+        this.bedrooms = bedrooms;
+        this.type = type;
+        this.garden = garden;
+        this.postcode = postcode;
         this.seller = seller;
-    }
-
-    public Property() {
-
     }
 
     public long getProperty_id() {
@@ -63,6 +74,46 @@ public class Property {
         this.price = price;
     }
 
+    public int getBathrooms() {
+        return bathrooms;
+    }
+
+    public void setBathrooms(int bathrooms) {
+        this.bathrooms = bathrooms;
+    }
+
+    public int getBedrooms() {
+        return bedrooms;
+    }
+
+    public void setBedrooms(int bedrooms) {
+        this.bedrooms = bedrooms;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getGarden() {
+        return garden;
+    }
+
+    public void setGarden(String garden) {
+        this.garden = garden;
+    }
+
+    public String getPostcode() {
+        return postcode;
+    }
+
+    public void setPostcode(String postcode) {
+        this.postcode = postcode;
+    }
+
     public Seller getSeller() {
         return seller;
     }
@@ -78,6 +129,11 @@ public class Property {
                 ", address='" + address + '\'' +
                 ", status='" + status + '\'' +
                 ", price=" + price +
+                ", bathrooms=" + bathrooms +
+                ", bedrooms=" + bedrooms +
+                ", type='" + type + '\'' +
+                ", garden='" + garden + '\'' +
+                ", postcode='" + postcode + '\'' +
                 ", seller=" + seller +
                 '}';
     }

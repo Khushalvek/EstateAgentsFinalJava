@@ -47,7 +47,8 @@ public class SellerService {
     public Seller updateSeller (long seller_id, Seller updatedSeller){
 
         Seller toUpdate = this.getSeller(seller_id);
-        toUpdate.setName(updatedSeller.getName());
+        toUpdate.setFirstname(updatedSeller.getFirstname());
+        toUpdate.setSurname(updatedSeller.getSurname());
         toUpdate.setEmail(updatedSeller.getEmail());
 
         return this.repo.save(toUpdate);

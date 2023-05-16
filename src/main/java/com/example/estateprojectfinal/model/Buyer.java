@@ -13,16 +13,21 @@ public class Buyer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private long buyer_Id;
-    private String Name;
-    private String email;
+    private String firstName;
+    private String surname;
+    private String address;
+    private String postcode;
+    private String  phone;
 
-
-    public Buyer(long buyer_Id, String name, String email) {
+    public Buyer(long buyer_Id, String firstName, String surname, String address, String postcode, String phone) {
         this.buyer_Id = buyer_Id;
-        Name = name;
-        this.email = email;
-
+        this.firstName = firstName;
+        this.surname = surname;
+        this.address = address;
+        this.postcode = postcode;
+        this.phone = phone;
     }
+
 
     public Buyer() {
 
@@ -36,28 +41,57 @@ public class Buyer {
         this.buyer_Id = buyer_Id;
     }
 
-    public String getName() {
-        return Name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        Name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getEmail() {
-        return email;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPostcode() {
+        return postcode;
+    }
+
+    public void setPostcode(String postcode) {
+        this.postcode = postcode;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     @Override
     public String toString() {
         return "Buyer{" +
                 "buyer_Id=" + buyer_Id +
-                ", Name='" + Name + '\'' +
-                ", email='" + email + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", surname='" + surname + '\'' +
+                ", address='" + address + '\'' +
+                ", postcode='" + postcode + '\'' +
+                ", phone=" + phone +
                 '}';
     }
 }
+
+

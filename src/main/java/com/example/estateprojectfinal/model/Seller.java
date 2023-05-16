@@ -11,7 +11,8 @@ public class Seller {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long seller_id;
-    private String Name;
+    private String firstname;
+    private String surname;
     private String email;
 
     private String address;
@@ -30,13 +31,14 @@ public class Seller {
 
     }
 
-    public long getId() {
+    public long getSeller_id() {
         return seller_id;
     }
 
-    public Seller(long property_id, String name, String email, String address, String postcode, Buyer buyer, List<Property> propertyList) {
-        this.seller_id = property_id;
-        Name = name;
+    public Seller(long seller_id, String firstname, String surname, String email, String address, String postcode, Buyer buyer, List<Property> propertyList) {
+        this.seller_id = seller_id;
+        this.firstname = firstname;
+        this.surname = surname;
         this.email = email;
         this.address = address;
         this.postcode = postcode;
@@ -44,20 +46,24 @@ public class Seller {
         this.propertyList = propertyList;
     }
 
-    public long getProperty_id() {
-        return seller_id;
+    public void setSeller_id(long seller_id) {
+        this.seller_id = seller_id;
     }
 
-    public void setProperty_id(long property_id) {
-        this.seller_id = property_id;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public String getName() {
-        return Name;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
-    public void setName(String name) {
-        Name = name;
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     public String getEmail() {
@@ -104,7 +110,8 @@ public class Seller {
     public String toString() {
         return "Seller{" +
                 "seller_id=" + seller_id +
-                ", Name='" + Name + '\'' +
+                ", firstname='" + firstname + '\'' +
+                ", surname='" + surname + '\'' +
                 ", email='" + email + '\'' +
                 ", address='" + address + '\'' +
                 ", postcode='" + postcode + '\'' +

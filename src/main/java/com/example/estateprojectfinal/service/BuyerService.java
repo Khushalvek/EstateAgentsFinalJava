@@ -47,8 +47,11 @@ public class BuyerService {
     public Buyer updateBuyer (long buyer_id, Buyer updatedBuyer)
     {
         Buyer toUpdate = this.getBuyer(buyer_id);
-        toUpdate.setName(updatedBuyer.getName());
-        toUpdate.setEmail(updatedBuyer.getEmail());
+        toUpdate.setFirstName(updatedBuyer.getFirstName());
+        toUpdate.setSurname(updatedBuyer.getSurname());
+        toUpdate.setAddress(updatedBuyer.getAddress());
+        toUpdate.setPostcode(updatedBuyer.getPostcode());
+        toUpdate.setPhone(updatedBuyer.getPhone());
 
         return this.repo.save(toUpdate);
     }
